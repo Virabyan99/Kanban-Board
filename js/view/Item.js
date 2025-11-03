@@ -27,7 +27,7 @@ export default class Item {
 
         this.elements.input.addEventListener("blur", onBlur);
 
-        this.elements.root.addEventListener("dblclick", () => {
+        this.elements.root.querySelector('.kanban__item-delete').addEventListener("click", () => {
             const check = confirm("Are you sure you want to delete this item?");
             if (check) {
                 KanbanAPI.deleteItem(id);
@@ -51,6 +51,7 @@ export default class Item {
         return range.createContextualFragment(`
             <div class="kanban__item" draggable="true">
                 <div class="kanban__item-input" contenteditable></div>
+                <button class="kanban__item-delete" type="button">X</button>
             </div>
         `).children[0];
     }
