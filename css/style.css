@@ -12,6 +12,13 @@
 
 .kanban__column {
 	flex: 1;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 5px;
+	padding: 15px;
+}
+
+.kanban__column:nth-child(odd) {
+	background-color: rgba(255, 255, 255, 0.05);
 }
 
 .kanban__column:not(:last-child) {
@@ -25,12 +32,37 @@
 	user-select: none;
 }
 
+.kanban__item {
+    position: relative;
+    margin-bottom: 15px;
+}
+
 .kanban__item-input {
 	padding: 10px 15px;
 	box-sizing: border-box;
-	background: white;
+	background: #f0f0f0;
 	border-radius: 5px;
 	cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.kanban__item-delete {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 12px;
+    color: white;
+    background: rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.kanban__item:hover .kanban__item-delete {
+    display: block;
 }
 
 .kanban__dropzone {
